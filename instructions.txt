@@ -1,0 +1,66 @@
+This is a medium difficulty project. I suggest you get started early and make use of the provided resources (Start by reading the routly blog post). This will be worth 12 points. A working client code is given to you in Client.py; this is the same client as project 0.  Your job is again to write the corresponding server code. The goal of the server is to reply to any client with a list of the IP address corresponding to any domain name sent to it. 
+
+
+
+The server is not allowed to use gethostbyname or any function designed for DNS. Instead, the server must send a UDP (SOCK_DGRAM) message to the Google DNS server at 8.8.8.8 and ask it for the IP address. This means the server will need two sockets, one server socket to talk to the client and one client socket to talk to the Google DNS server. You must construct this DNS message according to your knowledge of the protocol and the provided resources. Lastly, it should then close gracefully when the client is done sending domain names. Sample output and input files have also been provided. Note that due to certain aspects of the way DNS works, your output may not exactly match the sample; you can check if it worked by typing the IP address into your browser and making sure you get the right webpage (or in some cases an error page)
+
+
+If the DNS server at 8.8.8.8 sends many answers, send all of them back to the client separated by a ‘,’ character in the order that they were sent to you. If the answer is not an A record, you should skip that record.
+
+
+Any code that is copied from anywhere without citation INCLUDING POSTED RESOURCES or fellow classmates will be considered a violation of the academic integrity policy and dealt with appropriately. To clarify, you may use code from the posted resources, but you must cite the resource you used.
+
+
+How we will test your programs
+------------------------------
+
+
+As part of your submission, you will turn in one program:Server.py and one README file (more on this below). We will be running the two programs on the ilab machines with Python 3.8.
+
+
+Please do not assume that all programs will run on the same machine or that all
+connections are made to the local host.  We reserve the right to test your
+programs with local and remote socket connections, for example with Client.py,
+And Server.py each running on a different machine. You are welcome to
+simplify the initial development and debugging of your project, and get off the
+ground by running all programs on one machine first. However, you must
+eventually ensure that the programs can work across multiple machines.
+
+
+The programs must work with the following command lines:
+
+
+python Server.py PORT
+python Client.py SERVERADDRESS PORT
+
+
+An example of this would be:
+python Server.py 5444
+python Client.py vi.cs.rutgers.edu 5444
+
+
+By default the client reads from a file called source_strings.txt and writes to a file called results.txt
+
+
+
+
+README file
+-----------
+
+
+In addition to your programs, you must also submit a README file with clearly
+delineated sections for the following.
+
+
+0. Please write down the full names and netids of both your team members.
+1. Are there known issues or functions that aren't working currently in your
+   attached code? If so, explain. (note that you will get half credit for any reasonably sized bug that is fully explained in the readme)
+3. What problems did you face developing code for this project? Around how long did you spend on this project (This helps me decide what I need to explain more clearly for the next projects)
+4. What interesting thing does you program do to accomplish the task
+
+Submission
+----------
+
+
+Turn in your project on Sakai assignments. Only one team member needs to
+submit. You must submit Server.py and README

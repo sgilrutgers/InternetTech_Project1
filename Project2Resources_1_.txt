@@ -1,0 +1,19 @@
+﻿Guide to handwriting DNS messages (I recommend starting by reading this, make sure your message exactly matches his using his example domain name, then you can make sure you can handle other domain names):
+https://routley.io/posts/hand-writing-dns-messages/
+
+
+Struct in python:
+Python3:
+https://docs.python.org/3/library/struct.html
+
+
+UDP sockets in Python:
+https://wiki.python.org/moin/UdpCommunication
+
+
+Bitwise functions in python:
+https://wiki.python.org/moin/BitwiseOperators
+
+
+Official DNS definition (This is what the homework will involve reading):
+https://tools.ietf.org/html/rfc1035
