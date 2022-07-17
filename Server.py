@@ -28,14 +28,12 @@ def getIpList(packetLen, msg):
     msg = msg.replace("\n"," ")
     msg = msg.split(" ")
     msglen = len(msg)
-
     ipList = ""
-    if(msg[3] == "01"):
+    if(msg[3] == "01" or msg[3] == "83" or msg[7] == "00" ): # 83 is also a  error code, # 00 at index 7 means 0 answers
         return("NXDOMAIN")
 
 
     for x in range(msglen):
-
         if(msg[x] == "c0"):
 
             if((x+11)<msglen):
@@ -84,7 +82,6 @@ def connectDNS(msg, packetLen):
 
     datalist = format_hex(data)
     client_sock.close()
-
     return(getIpList(packetLen,datalist))
 
 
